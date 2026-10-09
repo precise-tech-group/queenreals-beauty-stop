@@ -317,15 +317,6 @@
   gap: 28px;
 }
 .why-card { text-align: left; }
-.why-icon {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  border: 1px solid var(--border-soft);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--gold-600);
-  margin-bottom: 22px;
-}
-.why-icon svg { width: 24px; height: 24px; }
 .why-card h3 { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 10px; font-weight: 500; }
 .why-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.65; }
 
