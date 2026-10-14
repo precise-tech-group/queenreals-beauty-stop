@@ -127,6 +127,117 @@
   .form-row { grid-template-columns: 1fr; }
 }
 
+/* ---- Instant booking (real Square checkout) cards ---- */
+.instant-booking { background: linear-gradient(180deg, var(--cream-100), var(--cream-50)); }
+.instant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.instant-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  box-shadow: 0 20px 50px -26px rgba(19,10,25,0.35);
+}
+.instant-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-soft); }
+.instant-card:hover img { transform: scale(1.06); }
+.instant-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(195deg, rgba(19,10,25,0.05) 35%, rgba(19,10,25,0.92) 100%);
+}
+.instant-card-body {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  padding: 24px;
+  color: var(--cream-100);
+}
+.instant-card-body h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; margin-bottom: 6px; }
+.instant-card-body p { font-size: 0.82rem; color: var(--text-on-dark-muted); margin-bottom: 16px; }
+.instant-card-body .btn { width: 100%; }
+.instant-note { text-align: center; margin-top: 28px; color: var(--text-muted); font-size: 0.85rem; }
+.instant-note svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; color: var(--gold-600); }
+
+@media (max-width: 900px) { .instant-grid { grid-template-columns: 1fr; } }
+
+/* ---- Appointment calendar widget ---- */
+.appt-calendar {
+  background: var(--cream-50);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 3vw, 32px);
+  margin-bottom: 28px;
+}
+.cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.cal-month-label { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; }
+.cal-nav { display: flex; gap: 8px; }
+.cal-nav button {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-dark);
+  transition: border-color var(--dur-fast), color var(--dur-fast);
+}
+.cal-nav button:hover:not(:disabled) { border-color: var(--gold-500); color: var(--gold-600); }
+.cal-nav button:disabled { opacity: 0.3; cursor: not-allowed; }
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-bottom: 22px;
+}
+.cal-weekday {
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-block: 6px;
+}
+.cal-day {
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  color: var(--text-dark);
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+.cal-day--empty { visibility: hidden; }
+.cal-day:not(.is-disabled):not(.cal-day--empty):hover { background: rgba(201,162,75,0.14); }
+.cal-day.is-today { border: 1px solid var(--gold-500); }
+.cal-day.is-selected { background: var(--plum-950); color: var(--gold-300); }
+.cal-day.is-disabled { color: var(--border-soft); cursor: not-allowed; }
+
+.cal-slots { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.cal-slot {
+  padding: 0.6em 1.3em;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  font-size: 0.82rem;
+  color: var(--text-dark);
+  transition: all var(--dur-fast);
+}
+.cal-slot:hover { border-color: var(--gold-500); color: var(--gold-600); }
+.cal-slot.is-selected { background: var(--plum-950); border-color: var(--plum-950); color: var(--gold-300); }
+.cal-summary {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  padding-top: 14px;
+  border-top: 1px solid var(--border-soft);
+}
+.cal-summary.is-active { color: var(--plum-900); font-weight: 500; }
+
 /* ---- FAQ ---- */
 .faq-section { background: linear-gradient(180deg, var(--cream-100), var(--cream-50)); }
 .faq-list { display: flex; flex-direction: column; max-width: 820px; margin-inline: auto; }

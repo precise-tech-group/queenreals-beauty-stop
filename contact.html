@@ -122,6 +122,43 @@
     </div>
   </section>
 
+  <section class="section instant-booking" id="book-online">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Instant Booking</span>
+        <h2 class="display-2">Book &amp; pay online, instantly</h2>
+        <p class="body-lg">These signature styles are ready to book and pay for right now — secure checkout powered by Square.</p>
+      </div>
+      <div class="instant-grid" data-stagger-gsap>
+        <div class="instant-card tilt-card">
+          <img src="/assets/images/box-braids-lace.webp" alt="Box braids styled with an elegant white lace top" loading="lazy" width="1400" height="1750">
+          <div class="instant-card-body">
+            <h3>Box Braids</h3>
+            <p>$100–$200 · Book your appointment and pay securely online.</p>
+            <a class="btn btn-primary btn-sm" href="https://queenreals-beauty-stopllc.square.site/shop/box-braids/FKSNEOUZX7KT6X37IIBKZ22T" target="_blank" rel="noopener">Book &amp; Pay Online</a>
+          </div>
+        </div>
+        <div class="instant-card tilt-card">
+          <img src="/assets/images/knotless-gold-beads.webp" alt="Close-up of knotless braids finished with gold hair beads" loading="lazy" width="1400" height="1750">
+          <div class="instant-card-body">
+            <h3>Knotless Box Braids</h3>
+            <p>$100–$200 · Book your appointment and pay securely online.</p>
+            <a class="btn btn-primary btn-sm" href="https://queenreals-beauty-stopllc.square.site/shop/knotless-box-braids/RGPAYR3XSDYLMAKQ7TVY4V45" target="_blank" rel="noopener">Book &amp; Pay Online</a>
+          </div>
+        </div>
+        <div class="instant-card tilt-card">
+          <img src="/assets/images/faux-locs-profile.webp" alt="Faux locs styled in side profile" loading="lazy" width="1400" height="1750">
+          <div class="instant-card-body">
+            <h3>Faux Locs</h3>
+            <p>By consultation · Book your appointment and pay securely online.</p>
+            <a class="btn btn-primary btn-sm" href="https://queenreals-beauty-stopllc.square.site/shop/faux-lox/O42JQKQJO5SOLDNVB2YID6WW" target="_blank" rel="noopener">Book &amp; Pay Online</a>
+          </div>
+        </div>
+      </div>
+      <p class="instant-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg>Secure booking &amp; payment handled entirely by Square — opens in a new tab. Don't see your style? Request a consultation below.</p>
+    </div>
+  </section>
+
   <section class="section form-section" id="enquiry">
     <div class="container form-grid">
       <div class="form-aside reveal-left">
@@ -169,8 +206,25 @@
           </div>
         </div>
         <div class="field">
-          <label for="preferred">Preferred Day / Time <span style="text-transform:none;">(optional)</span></label>
-          <input type="text" id="preferred" name="preferred" placeholder="e.g. Saturday afternoon">
+          <label id="preferredLabel">Preferred Day / Time <span style="text-transform:none;">(optional)</span></label>
+          <div class="appt-calendar" id="apptCalendar" role="group" aria-labelledby="preferredLabel">
+            <div class="cal-head">
+              <span class="cal-month-label"></span>
+              <div class="cal-nav">
+                <button type="button" class="cal-prev" aria-label="Previous month">‹</button>
+                <button type="button" class="cal-next" aria-label="Next month">›</button>
+              </div>
+            </div>
+            <div class="cal-grid"></div>
+            <div class="cal-slots">
+              <button type="button" class="cal-slot" data-slot="Morning">Morning</button>
+              <button type="button" class="cal-slot" data-slot="Afternoon">Afternoon</button>
+              <button type="button" class="cal-slot" data-slot="Evening">Evening</button>
+            </div>
+            <p class="cal-summary"></p>
+          </div>
+          <input type="hidden" id="preferred" name="preferred">
+          <p class="field-note">Pick a date and time of day — we'll confirm your exact appointment time by phone or email.</p>
         </div>
         <div class="field">
           <label for="message">Your Message</label>
@@ -203,7 +257,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">How do I book an appointment? <span class="faq-plus">+</span></button>
-          <div class="faq-a"><p>Call or text (434) 258-0419, email crishionc_2005@yahoo.com, or send an enquiry using the form above — we'll follow up to find a time that works for you.</p></div>
+          <div class="faq-a"><p>For box braids, knotless box braids, or faux locs, use the <a href="#book-online" style="color:var(--gold-600);">Book &amp; Pay Online</a> cards above to book and pay securely through Square instantly. For every other style, call or text (434) 258-0419, email crishionc_2005@yahoo.com, or use the appointment calendar in the form below — we'll follow up to confirm.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" aria-expanded="false">Do prices vary by hair length or type? <span class="faq-plus">+</span></button>
@@ -249,6 +303,13 @@
         </nav>
       </div>
     </div>
+    <div class="footer-sponsor">
+      <span class="footer-sponsor-label">Proudly Listed On</span>
+      <a class="footer-sponsor-link" href="https://eva.virginia.gov/" target="_blank" rel="noopener">
+        <img src="/assets/images/icons/eva-virginia-marketplace.png" alt="" width="26" height="20">
+        <span>Virginia's Marketplace (eVA) — our sponsor</span>
+      </a>
+    </div>
     <div class="footer-bottom">
       <span>&copy; <span id="year"></span> Queenreal's Beauty Stop, LLC. All rights reserved.</span>
       <span>Designed with care for textured hair &amp; beauty.</span>
@@ -266,6 +327,10 @@
     <a class="float-link" href="mailto:crishionc_2005@yahoo.com">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="m4 4 8 8 8-8"/></svg>
       Email Us
+    </a>
+    <a class="float-link" href="#book-online">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V8a5 5 0 0 1 10 0v3"/></svg>
+      Book &amp; Pay Online
     </a>
     <a class="float-link" href="#enquiry">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -285,6 +350,7 @@
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/animations.js"></script>
 <script src="/assets/js/contact-form.js"></script>
+<script src="/assets/js/calendar.js"></script>
 <script src="/assets/js/faq.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>

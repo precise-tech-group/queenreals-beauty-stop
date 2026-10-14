@@ -527,6 +527,38 @@ h1, h2, h3, h4, h5, h6 { font-weight: 500; line-height: 1.12; }
 }
 .footer-bottom a:hover { color: var(--gold-300); }
 
+/* ---- Sponsor badge (eVA Virginia Marketplace) ---- */
+.footer-sponsor {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 26px;
+  margin-top: 26px;
+  border-top: 1px solid var(--border-on-dark);
+}
+.footer-sponsor-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-on-dark-muted);
+}
+.footer-sponsor-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-on-dark);
+  transition: border-color var(--dur-fast), background var(--dur-fast);
+}
+.footer-sponsor-link:hover { border-color: var(--gold-400); background: rgba(201,162,75,0.08); }
+.footer-sponsor-link img { height: 26px; width: auto; border-radius: 50%; background: var(--cream-50); padding: 3px; }
+.footer-sponsor-link span { font-size: 0.82rem; color: var(--text-on-dark-muted); }
+.footer-sponsor-link:hover span { color: var(--gold-300); }
+
+@media (max-width: 560px) { .footer-sponsor { flex-direction: column; align-items: flex-start; gap: 10px; } }
+
 @media (max-width: 860px) {
   .footer-top { grid-template-columns: 1fr 1fr; gap: 36px 24px; }
 }

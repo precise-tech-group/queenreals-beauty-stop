@@ -130,6 +130,26 @@
   color: var(--gold-300);
   white-space: nowrap;
 }
+.menu-item-price-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 7px; flex-shrink: 0; }
+.menu-item-book {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--plum-950);
+  background: var(--gold-400);
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background var(--dur-fast), transform var(--dur-fast);
+}
+.menu-item-book:hover { background: var(--gold-300); transform: translateY(-1px); }
+.menu-item-book svg { width: 11px; height: 11px; }
 .menu-note {
   margin-top: 48px;
   padding-top: 28px;
@@ -235,3 +255,40 @@
 .product-card-label { position: absolute; left: 18px; bottom: 16px; z-index: 2; color: var(--cream-100); font-family: var(--font-display); font-size: 1.1rem; font-style: italic; }
 @media (max-width: 860px) { .products-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 540px) { .products-grid { grid-template-columns: 1fr; } }
+
+/* ---- Partner spotlight (Shop Mayvenn) ---- */
+.partner-section {
+  background: var(--plum-950);
+  color: var(--text-on-dark);
+  position: relative;
+  overflow: hidden;
+}
+.partner-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: clamp(32px, 5vw, 70px);
+  align-items: center;
+}
+.partner-media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  box-shadow: 0 40px 100px -30px rgba(0,0,0,0.6);
+}
+.partner-media img { width: 100%; height: 100%; object-fit: cover; }
+.partner-copy p.body-lg { margin-block: 18px 32px; max-width: 54ch; }
+.partner-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  margin-left: 18px;
+  font-size: 0.8rem;
+  color: var(--text-on-dark-muted);
+}
+.partner-code strong { color: var(--gold-300); font-family: var(--font-display); font-style: italic; }
+
+@media (max-width: 900px) {
+  .partner-grid { grid-template-columns: 1fr; }
+  .partner-media { max-width: 320px; margin-inline: auto; }
+}

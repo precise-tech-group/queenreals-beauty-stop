@@ -28,6 +28,7 @@ Built as a fully static site using **HTML5, CSS3, and vanilla JavaScript** (with
     │   ├── animations.js      GSAP/ScrollTrigger: hero entrance, parallax, pinned storytelling, horizontal scroll
     │   ├── collections.js     Category pill scroll-spy
     │   ├── contact-form.js    Client-side validation + mailto fallback
+    │   ├── calendar.js        Appointment date/time-of-day picker
     │   └── faq.js             Accordion
     └── images/                 Optimized WebP imagery + favicon set
 ```
@@ -40,14 +41,20 @@ Built as a fully static site using **HTML5, CSS3, and vanilla JavaScript** (with
 
 ## Content & Imagery Sourcing
 
-- **Business copy** (mission statement, service descriptions, founder bio, real service pricing) was pulled directly from the client's existing Square Online site (`queenreals-beauty-stopllc.square.site`) — no fabricated claims, prices, or history.
-- **Founder photo** and **five real client-work photos** (box braids, cornrows, crochet curls, freeform dreads) are the business's own uploaded images, reused directly.
+- **Business copy** (mission statement, service descriptions, founder bio, real service pricing, the Mayvenn partner spotlight, the eVA Virginia Marketplace sponsor credit) was pulled directly from the client's existing Square Online site (`queenreals-beauty-stopllc.square.site`) — no fabricated claims, prices, or history.
+- **Founder photo**, **five real client-work photos** (box braids, cornrows, crochet curls, freeform dreads), the **Mayvenn partner image**, and the **eVA logo** are the business's own uploaded assets, reused directly.
 - **Brand mark** (the purple woman-silhouette icon) was extracted and cleaned from the client's existing site cover image/favicon — the business's real logo graphic, not a generated substitute.
 - **Editorial/stock photography** is sourced from [Pexels](https://www.pexels.com) (free license, no attribution required) and optimized to WebP.
 
+## Booking & Payment
+
+Three signature styles (Box Braids, Knotless Box Braids, Faux Locs) can be booked and paid for **instantly online** — the "Book & Pay Online" buttons on the Collections pricing menu and the Contact page's Instant Booking cards link directly to the business's own existing, live Square checkout pages for those exact items. This reuses the business's real, already-functioning payment processor rather than fabricating a new one — there is no card form anywhere on this site collecting payment details directly.
+
+For every other style, `contact.html` includes a real, functional **appointment calendar** (`assets/js/calendar.js`): a month grid with past dates disabled and a morning/afternoon/evening time-of-day picker. It is a scheduling *preference* tool, not a live-availability booking system — there's no backend confirming open slots — so the selection is written into the enquiry form's hidden "preferred" field and submitted through the same honest mailto flow described below, for the business to confirm manually.
+
 ## Contact Form
 
-The enquiry form on `contact.html` performs full client-side validation, then opens the visitor's email client via a `mailto:` link pre-filled with their enquiry, addressed to the business. **There is no backend** — nothing is silently submitted server-side.
+The enquiry form on `contact.html` performs full client-side validation, then opens the visitor's email client via a `mailto:` link pre-filled with their enquiry (including any date/time picked on the calendar), addressed to the business. **There is no backend** — nothing is silently submitted server-side.
 
 To wire a real backend later (Formspree, Netlify Forms, a serverless function, etc.), replace the `submitViaMailto()` call in `assets/js/contact-form.js`'s submit handler with a `fetch()` POST to that endpoint. See the comment block at the top of that file.
 
