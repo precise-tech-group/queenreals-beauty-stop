@@ -19,11 +19,17 @@
   position: absolute; inset: 0;
   background: linear-gradient(0deg, var(--plum-950) 10%, rgba(19,10,25,0.55) 60%, rgba(19,10,25,0.8));
 }
-.contact-hero-inner { position: relative; z-index: 2; padding-block: clamp(50px, 7vw, 80px); max-width: 760px; }
+.contact-hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-top: clamp(50px, 7vw, 80px);
+  padding-bottom: clamp(120px, 14vw, 170px);
+  max-width: 760px;
+}
 .contact-hero-inner .display-1 { margin-block: 18px 16px; }
 
 /* ---- Contact cards ---- */
-.contact-cards { margin-top: -90px; position: relative; z-index: 5; }
+.contact-cards { margin-top: -80px; position: relative; z-index: 5; }
 .contact-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
