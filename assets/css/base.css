@@ -596,6 +596,45 @@ h1, h2, h3, h4, h5, h6 { font-weight: 500; line-height: 1.12; }
 }
 .gold-rule--center { margin-inline: auto; background: linear-gradient(90deg, transparent, var(--gold-500), transparent); }
 
+/* ---- Welcome note (appointments & walk-ins callout) ---- */
+.welcome-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  max-width: 480px;
+  background: rgba(27,15,36,0.86);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-on-dark);
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  box-shadow: 0 24px 60px -16px rgba(0,0,0,0.45);
+}
+.welcome-note-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-500);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold-400);
+}
+.welcome-note-icon svg { width: 20px; height: 20px; }
+.welcome-note p { font-size: 0.82rem; color: var(--text-on-dark-muted); line-height: 1.5; }
+.welcome-note strong { display: block; font-family: var(--font-display); font-size: 1.02rem; font-weight: 500; color: var(--cream-100); }
+
+.welcome-note--light {
+  background: var(--cream-50);
+  border-color: var(--border-soft);
+  box-shadow: 0 20px 50px -28px rgba(19,10,25,0.22);
+}
+.welcome-note--light .welcome-note-icon { border-color: var(--gold-500); color: var(--gold-600); }
+.welcome-note--light p { color: var(--text-muted); }
+.welcome-note--light strong { color: var(--text-dark); }
+
+@media (max-width: 560px) {
+  .welcome-note { max-width: 100%; padding: 14px 18px; gap: 12px; }
+}
+
 .section-head {
   display: flex;
   flex-direction: column;
